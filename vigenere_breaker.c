@@ -115,7 +115,7 @@ get_most_likely_key_size(float sum_of_squares[]){
 
 int
 is_acceptable_value(int val){
-	return (val >= 32 && val <= 33) || (val >= 44 && val <= 46)
+	return (val >= 32 && val <= 33) || (val >= 44 && val <= 57)
 		|| (val >= 63 && val <= 90) || (val >= 97 && val <= 122);
 }
 
@@ -187,6 +187,7 @@ int main(int argc, char *argv[]){
 
 	cyphertexts = malloc(sizeof(int *) * key_size);
 	int key[key_size];
+	printf("%d\n", key_size);
 	for(i = 0; i < key_size; i++){	
 //		fprintf(stderr, "i = %d\n", i+1);
 		*(cyphertexts + i) = get_n_values(key_size, i, cyphertext_ascii);
